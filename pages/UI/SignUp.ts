@@ -68,12 +68,18 @@ export class SignUp {
 
     }
 
-    async registerUser() {
+    async userSignup() {
 
         await this.signupname.fill(UserProfile.signupname);
         await this.signupemail.fill(UserProfile.signupemail);
 
         await this.signup.click();
+
+    }
+
+    async registerUser() {
+
+
         await this.title.check();
 
         await this.accountname.fill(UserProfile.accountname);
