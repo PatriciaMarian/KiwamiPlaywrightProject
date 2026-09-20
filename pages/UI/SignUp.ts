@@ -10,7 +10,7 @@ export class SignUp {
     readonly firstname: Locator;
     readonly lastname: Locator;
     readonly accountname: Locator;
-    //readonly accountemail: Locator;
+    //readonly accountemail: Locator; - the field is already disabled
     readonly password: Locator;
     readonly day: Locator;
     readonly month: Locator;
