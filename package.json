@@ -1,0 +1,21 @@
+{
+  "name": "automation-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "generate": "allure generate --clean",
+    "serve": "allure serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^10.6.0",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^22.20.2",
+    "allure-commandline": "^2.43.0",
+    "allure-playwright": "^3.12.1"
+  }
+}
