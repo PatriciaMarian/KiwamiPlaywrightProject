@@ -10,7 +10,7 @@ export class SignUp {
     readonly firstname: Locator;
     readonly lastname: Locator;
     readonly accountname: Locator;
-    readonly accountemail: Locator;
+    //readonly accountemail: Locator;
     readonly password: Locator;
     readonly day: Locator;
     readonly month: Locator;
@@ -38,7 +38,7 @@ export class SignUp {
         this.title = page.locator('#id_gender2');
 
         this.accountname = page.locator('#name');
-        this.accountemail = page.locator('#email');
+        //this.accountemail = page.locator('input[data-qa="email"]',);
 
         this.password = page.locator('input[data-qa="password"]',);
         this.day = page.locator('#days');
@@ -52,7 +52,7 @@ export class SignUp {
         this.lastname = page.locator('#last_name');
         this.company = page.locator('#company');
         this.address = page.locator('#address1');
-        this.address2 = page.locator('address2');
+        this.address2 = page.locator('#address2');
         this.country = page.locator('#country');
         this.state = page.locator('#state');
         this.city = page.locator('#city');
@@ -77,12 +77,12 @@ export class SignUp {
         await this.title.check();
 
         await this.accountname.fill(UserProfile.accountname);
-        await this.accountemail.fill(UserProfile.accountemail);
+        //await this.accountemail.fill(UserProfile.accountemail); - since its disabled and picks the value from signup and login email.
         await this.password.fill(UserProfile.password);
 
-        await this.day.fill(UserProfile.day);
-        await this.month.fill(UserProfile.month);
-        await this.year.fill(UserProfile.year);
+        await this.day.selectOption(UserProfile.day);
+        await this.month.selectOption(UserProfile.month);
+        await this.year.selectOption(UserProfile.year);
 
         await this.checknewsletter.check();
         await this.checkreveiveoffers.check();
@@ -92,7 +92,7 @@ export class SignUp {
         await this.company.fill(UserProfile.company);
         await this.address.fill(UserProfile.address);
         await this.address2.fill(UserProfile.address2);
-        await this.country.fill(UserProfile.country);
+        await this.country.selectOption('Australia');
         await this.state.fill(UserProfile.state);
         await this.city.fill(UserProfile.city);
         await this.zipcode.fill(UserProfile.zipcode);

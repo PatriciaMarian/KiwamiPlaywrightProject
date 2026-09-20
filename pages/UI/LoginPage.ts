@@ -1,4 +1,5 @@
 import { Locator, Page } from "playwright";
+import { UserProfile } from "../../Utils/SignupFaker";
 
 export class LoginPage {
     readonly page: Page;
@@ -23,9 +24,9 @@ export class LoginPage {
 
     }
 
-    async login(emailaddress: string, passwordnote: string) {
-        await this.email.fill(emailaddress);
-        await this.password.fill(passwordnote);
+    async login() {
+        await this.email.fill(UserProfile.loginemail);
+        await this.password.fill(UserProfile.loginpassword);
         await this.loginbutton.click();
     }
 }

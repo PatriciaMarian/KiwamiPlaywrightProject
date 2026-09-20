@@ -4,15 +4,18 @@ import { faker } from '@faker-js/faker'
 
 const firstName = faker.person.firstName()
 const email = faker.internet.email()
+const password = faker.internet.password()
 
 export const UserProfile = {
 
+  loginemail: email,
+  loginpassword: password,
 
   signupname: firstName,
   signupemail: email,
   accountname: firstName,
-  accountemail: email,
-  password: faker.internet.password(),
+  //accountemail: email,
+  password: password,
 
 
   day: faker.number.int({ min: 1, max: 28 }).toString(),
@@ -24,8 +27,8 @@ export const UserProfile = {
   lastName: faker.person.lastName(),
   company: faker.company.name(),
   address: faker.location.streetAddress(),
-  address2: faker.location.secondaryAddress(),
-  country: faker.location.country(),
+  address2: faker.location.street(),
+  //country: faker.location.country(), - passed the value in the method
   state: faker.location.state(),
   city: faker.location.city(),
   zipcode: faker.location.zipCode(),

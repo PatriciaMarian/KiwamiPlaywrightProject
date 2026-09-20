@@ -1,1 +1,1 @@
-[{"uid":"46a8d343fae9e09b","name":"User to login","time":{"start":1789482533529,"stop":1789482563556,"duration":30027},"status":"broken","severity":"normal"}]
+[{"uid":"a00381f7bae01536","name":"User to login","time":{"start":1789935513462,"stop":1789935522893,"duration":9431},"status":"passed","severity":"normal"},{"uid":"93c0feddb60c4c37","name":"Register a new user","time":{"start":1789935513461,"stop":1789935543599,"duration":30138},"status":"broken","severity":"normal"}]
