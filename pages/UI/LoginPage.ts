@@ -3,6 +3,7 @@ import { UserProfile } from "../../Utils/SignupFaker";
 
 export class LoginPage {
     readonly page: Page;
+    readonly signuplink: Locator;
     readonly email: Locator;
     readonly password: Locator;
     readonly loginbutton: Locator;
@@ -10,6 +11,7 @@ export class LoginPage {
 
     constructor(page: Page) {
         this.page = page;
+        this.signuplink = page.locator('.fa.fa-lock');
         this.email = page.locator('input[data-qa="login-email"]',);
         this.password = page.locator('input[data-qa="login-password"]',);
         this.loginbutton = page.getByRole('button', { name: 'Login' })
@@ -19,8 +21,10 @@ export class LoginPage {
 
     async openApp() {
 
-        await this.page.goto('https://www.automationexercise.com/login'); //{ waitUntil: 'networkidle' });
-        //this.signloginlink.click();
+        await this.page.goto('https://www.automationexercise.com');
+        await this.signuplink.click();
+
+        //await this.page.goto('https://www.automationexercise.com/login');
 
     }
 

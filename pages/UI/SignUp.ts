@@ -3,9 +3,10 @@ import { UserProfile } from "../../Utils/SignupFaker";
 
 export class SignUp {
     readonly page: Page;
+    readonly signuplink: Locator;
     readonly signupname: Locator;
     readonly signupemail: Locator;
-    readonly signup: Locator;
+    readonly signupbtn: Locator;
     readonly title: Locator;
     readonly firstname: Locator;
     readonly lastname: Locator;
@@ -27,14 +28,13 @@ export class SignUp {
     readonly mobile: Locator;
     readonly createbtn: Locator;
 
-
-
     constructor(page: Page) {
 
         this.page = page;
+        this.signuplink = page.locator('.fa.fa-lock');
         this.signupname = page.locator('input[data-qa="signup-name"]',);
         this.signupemail = page.locator('input[data-qa="signup-email"]',);
-        this.signup = page.getByRole('button', { name: 'Signup' });
+        this.signupbtn = page.getByRole('button', { name: 'Signup' });
         this.title = page.locator('#id_gender2');
 
         this.accountname = page.locator('#name');
@@ -64,7 +64,11 @@ export class SignUp {
     }
 
     async registerURL() {
-        await this.page.goto('https://www.automationexercise.com/login');
+
+        await this.page.goto('https://www.automationexercise.com');
+        await this.signuplink.click();
+
+        //await this.page.goto('https://www.automationexercise.com/login');
 
     }
 
@@ -73,15 +77,13 @@ export class SignUp {
         await this.signupname.fill(UserProfile.signupname);
         await this.signupemail.fill(UserProfile.signupemail);
 
-        await this.signup.click();
+        await this.signupbtn.click();
 
     }
 
     async registerUser() {
 
-
         await this.title.check();
-
         await this.accountname.fill(UserProfile.accountname);
         //await this.accountemail.fill(UserProfile.accountemail); - since its disabled and picks the value from signup and login email.
         await this.password.fill(UserProfile.password);
@@ -98,7 +100,7 @@ export class SignUp {
         await this.company.fill(UserProfile.company);
         await this.address.fill(UserProfile.address);
         await this.address2.fill(UserProfile.address2);
-        await this.country.selectOption('Australia');
+        await this.country.selectOption('India');
         await this.state.fill(UserProfile.state);
         await this.city.fill(UserProfile.city);
         await this.zipcode.fill(UserProfile.zipcode);

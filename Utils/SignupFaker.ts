@@ -8,11 +8,15 @@ const password = faker.internet.password()
 
 export const UserProfile = {
 
+  //login page
   loginemail: email,
   loginpassword: password,
 
+  //signup page
   signupname: firstName,
   signupemail: email,
+
+  //account registration page
   accountname: firstName,
   //accountemail: email,
   password: password,
@@ -33,5 +37,7 @@ export const UserProfile = {
   city: faker.location.city(),
   zipcode: faker.location.zipCode(),
   mobile: `9${faker.string.numeric(9)}`,
-  //mobile: '9' + faker.phone.number({ style: 'national' }),
+
 };
+
+
