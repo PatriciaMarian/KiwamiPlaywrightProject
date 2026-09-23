@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from "../../pages/UI/LoginPage";
-import loginData from '../../test-data/loginData.json'
+import * as logindata from '../../test-data/logindata.json';
+//import logindata from '../../test-data/logindata.json'
 
 test("User to login", async ({ page }) => {
 
