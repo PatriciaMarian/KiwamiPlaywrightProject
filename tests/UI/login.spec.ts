@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from "../../pages/UI/LoginPage";
-import * as logindata from '../../test-data/logindata.json';
+import * as loginData from '../../test-data/loginData.json';
 //import logindata from '../../test-data/logindata.json'
 
 test("User to login", async ({ page }) => {
@@ -9,8 +9,8 @@ test("User to login", async ({ page }) => {
 
     await loginpageObj.openApp();
     await loginpageObj.login(
-        logindata['Valid User'].email,
-        logindata['Valid User'].password
+        loginData['Valid User'].email,
+        loginData['Valid User'].password
     );
     await expect(page).toHaveURL('https://www.automationexercise.com/');
 })
@@ -21,8 +21,8 @@ test("Login with invalid email", async ({ page }) => {
 
     await loginpageObj.openApp();
     await loginpageObj.login(
-        logindata['Invalid email'].email,
-        logindata['Invalid email'].password
+        loginData['Invalid email'].email,
+        loginData['Invalid email'].password
     );
 
     await expect(loginpageObj.errormessage).toBeVisible();
@@ -35,8 +35,8 @@ test("Login with an invalid password", async ({ page }) => {
 
     await loginpageObj.openApp();
     await loginpageObj.login(
-        logindata['Invalid password'].email,
-        logindata['Invalid password'].password
+        loginData['Invalid password'].email,
+        loginData['Invalid password'].password
     );
 
     await expect(loginpageObj.errormessage).toBeVisible();
