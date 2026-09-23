@@ -1,0 +1,14 @@
+    {
+        "Valid User": {
+            "email": "mary123@gmail.com",
+            "password": "hzDAeWEA5GmkC@"
+        },
+        "Invalid password": {
+            "email": "mary123@gmail.com",
+            "password": "123456"
+        },
+        "Invalid email": {
+            "email": "paul@gmail.com",
+            "password": "hzDAeWEA5GmkC@"
+        }
+    }
