@@ -9,5 +9,6 @@ test('select product and add to chart', async ({ page }) => {
     await productsAdded.selectProduct(products);
 
     //await expect(productsAdded.addedmodal).toBeVisible();
+    //to await
 }
 )
