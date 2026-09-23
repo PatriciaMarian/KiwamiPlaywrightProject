@@ -28,6 +28,7 @@ export class SignUp {
     readonly mobile: Locator;
     readonly createbtn: Locator;
 
+
     constructor(page: Page) {
 
         this.page = page;
@@ -61,6 +62,7 @@ export class SignUp {
 
         this.createbtn = page.getByRole('button', { name: 'Create Account' });
 
+
     }
 
     async registerURL() {
@@ -68,7 +70,7 @@ export class SignUp {
         await this.page.goto('https://www.automationexercise.com');
         await this.signuplink.click();
 
-        //await this.page.goto('https://www.automationexercise.com/login');
+
 
     }
 
@@ -78,6 +80,7 @@ export class SignUp {
         await this.signupemail.fill(UserProfile.signupemail);
 
         await this.signupbtn.click();
+
 
     }
 
