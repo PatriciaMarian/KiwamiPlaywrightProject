@@ -1,16 +1,11 @@
 
 import { faker } from '@faker-js/faker'
 
-
 const firstName = faker.person.firstName()
 const email = faker.internet.email()
 const password = faker.internet.password()
 
 export const UserProfile = {
-
-  //login page
-  loginemail: email,
-  loginpassword: password,
 
   //signup page
   signupname: firstName,

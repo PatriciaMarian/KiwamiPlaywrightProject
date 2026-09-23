@@ -1,7 +1,5 @@
-import { test, expect } from "@playwright/test"
-import { LoginPage } from "../../pages/UI/LoginPage"
-import { SignUp } from "../../pages/UI/SignUp"
-
+import { test, expect } from '@playwright/test';
+import { SignUp } from "../../pages/UI/SignUp";
 
 test('Register a new user', async ({ page }) => {
 
@@ -20,15 +18,3 @@ test('Register a new user', async ({ page }) => {
 }
 
 )
-/*
-test("User to login", async ({ page }) => {
-
-    const loginpageObj = new LoginPage(page);
-
-    await loginpageObj.openApp();
-    await loginpageObj.login();
-
-}
-
-)
-*/
