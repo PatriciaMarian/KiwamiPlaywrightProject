@@ -14,33 +14,37 @@ test.describe('Select Product and Checkout', () => {
         productsAdded = new SelectProduct(page);
 
         await loginpageObj.openApp();
+
         await loginpageObj.login(
             loginData['Valid User'].email,
             loginData['Valid User'].password
         );
+    })
 
-        test('Verify all the products are displayed', async ({ page }) => {
+    test('Verify all the products are displayed', async () => {
 
-            await productsAdded.allProductsDisplayed();
-        }
-        )
+        await productsAdded.allProductsDisplayed();
+    })
 
-        test('Add some products to cart', async ({ page }) => {
 
-            await productsAdded.selectSomeProducts(products);
+    test('Add some products to cart', async () => {
 
-            //await expect(productsAdded.addedmodal).toBeVisible();
-            //to await
-        }
-        )
+        await productsAdded.selectSomeProducts(products);
 
-        test.only('Add all products to cart', async ({ page }) => {
-
-            await productsAdded.addAllProductsToCart();
-            await expect(productsAdded.viewcart).toBeVisible();
-            //to await
-        }
-        )
+        //await expect(productsAdded.viewcart).toBeVisible();
 
     })
-})
+
+    test('Add the first products to cart', async () => {
+
+        await productsAdded.addFirstProductToCart();
+        //await productsAdded.addAllProductsToCart();
+        //await expect(productsAdded.addedmodal).toBeHidden();
+        //await expect(productsAdded.viewcart).toBeVisible();
+        //to await
+    })
+
+}
+)
+
+
