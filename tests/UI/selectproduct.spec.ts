@@ -1,14 +1,46 @@
 import { test, expect } from '@playwright/test';
-import { products } from '../../test-data/selectproducts';
+import { LoginPage } from '../../pages/UI/LoginPage';
+import { products } from '../../test-data/selectSomeProducts';
 import { SelectProduct } from '../../pages/UI/SelectProduct';
+import * as loginData from '../../test-data/loginData.json';
 
+test.describe('Select Product and Checkout', () => {
 
-test('select product and add to chart', async ({ page }) => {
+    let loginpageObj: LoginPage;
+    let productsAdded: SelectProduct;
 
-    const productsAdded = new SelectProduct(page);
-    await productsAdded.selectProduct(products);
+    test.beforeEach(async ({ page }) => {
+        loginpageObj = new LoginPage(page);
+        productsAdded = new SelectProduct(page);
 
-    //await expect(productsAdded.addedmodal).toBeVisible();
-    //to await
-}
-)
+        await loginpageObj.openApp();
+        await loginpageObj.login(
+            loginData['Valid User'].email,
+            loginData['Valid User'].password
+        );
+
+        test('Verify all the products are displayed', async ({ page }) => {
+
+            await productsAdded.allProductsDisplayed();
+        }
+        )
+
+        test('Add some products to cart', async ({ page }) => {
+
+            await productsAdded.selectSomeProducts(products);
+
+            //await expect(productsAdded.addedmodal).toBeVisible();
+            //to await
+        }
+        )
+
+        test.only('Add all products to cart', async ({ page }) => {
+
+            await productsAdded.addAllProductsToCart();
+            await expect(productsAdded.viewcart).toBeVisible();
+            //to await
+        }
+        )
+
+    })
+})
