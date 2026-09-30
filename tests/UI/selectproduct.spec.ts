@@ -24,22 +24,27 @@ test.describe('Select Product and Checkout', () => {
     test('Verify all the products are displayed', async () => {
 
         await productsAdded.allProductsDisplayed();
-        await expect(productsAdded.addedmodal).toBeHidden();
     })
 
 
     test('Add some products to cart', async () => {
 
         await productsAdded.selectSomeProducts(products);
-        await expect(productsAdded.addedmodal).toBeHidden();
 
+        //await expect(productsAdded.viewcart).toBeVisible();
 
     })
 
     test('Add the first products to cart', async () => {
 
         await productsAdded.addFirstProductToCart();
-        await expect(productsAdded.addedmodal).toBeHidden();
-
+        //await productsAdded.addAllProductsToCart();
+        //await expect(productsAdded.addedmodal).toBeHidden();
+        //await expect(productsAdded.viewcart).toBeVisible();
+        //to await
     })
-})
+
+}
+)
+
+

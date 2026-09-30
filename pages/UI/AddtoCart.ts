@@ -17,16 +17,3 @@ test('test', async ({ page }) => {
   await page.getByText(' Checkout Register / Login').click();
   await page.getByRole('link', { name: 'Register / Login' }).click();
 });
-
-
-test('Verify that page elements are visible', async ({ page }) => {
-
-})
-
-test('Validate the first product added to the cart', async ({ page }) => {
-
-})
-
-test('Validate some of the products added to the cart', async ({ page }) => {
-
-})
