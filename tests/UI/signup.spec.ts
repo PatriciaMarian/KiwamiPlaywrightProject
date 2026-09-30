@@ -10,6 +10,8 @@ test('Register a new user', async ({ page }) => {
 
     await signInUser.userSignup();
     await expect(page).toHaveTitle('Automation Exercise - Signup');
+    await expect(signInUser.accountemail).toBeDisabled();
+
     //await expect(page.locator('input[data-qa="email"]')).toBeDisabled();
 
     await signInUser.registerUser();

@@ -12,7 +12,9 @@ test("User to login", async ({ page }) => {
         loginData['Valid User'].email,
         loginData['Valid User'].password
     );
+
     await expect(page).toHaveURL('https://www.automationexercise.com/');
+    await expect(page).toHaveTitle('Automation Exercise');
 })
 
 test("Login with invalid email", async ({ page }) => {

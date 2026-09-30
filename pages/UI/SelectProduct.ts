@@ -9,10 +9,7 @@ export class SelectProduct {
     readonly addToCartBtn: Locator;
     readonly contshoppingbtn: Locator;
     readonly addedmodal: Locator;
-    //readonly viewcart: Locator;
     readonly placeorderbtn: Locator;
-
-    readonly reviewfill: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -20,22 +17,10 @@ export class SelectProduct {
         this.productPrice = page.locator('.productinfo > h2');
         this.productDescription = page.locator('.productinfo > p');
         this.addToCartBtn = page.locator('.productinfo > a.add-to-cart');
-        //this.addToCartBtn = page.locator('.productinfo > .btn');
-        //.fa.fa-shopping-cart
-        //page.getByRole('button', { name: 'Add To Cart' });
-        this.reviewfill = page.locator('.form-control');
         this.placeorderbtn = page.getByRole('button', { name: 'Place Order' });
         this.contshoppingbtn = page.locator('#cartModal button.close-modal');
-        // this.contshoppingbtn = page.getByText('Continue Shopping', { exact: true });
-        //this.viewcart = page.getByRole('link', { name: 'View Cart' });
         this.addedmodal = page.locator('#cartModal');
-        //Assertion needed Title: Automation Exercise
-        //Assertion page to contain: Features Items
-        //checkout page title: Automation Exercise - Checkout 
 
-        //payment title assertion: Automation Exercise - Payment
-
-        //checkout page to contain: Your delivery address & Your billing address & Review Your Order
 
     }
 
@@ -73,32 +58,6 @@ export class SelectProduct {
                 await this.contshoppingbtn.click();
             }
         }
-
-
-        /*
-    
-        async addAllProductsToCart(): Promise<void> {
-            const count = await this.addToCartBtn.count();
-    
-            for (let i = 0; i < count; i++) {
-                await this.addToCartBtn.nth(i).click();
-    
-                await this.contshoppingbtn.click();
-    
-                //await expect(this.addedmodal).toBeHidden();
-            }
-        }
-        
-            async addAllProductsToCart() {
-                const count = await this.productName.count();
-        
-                for (let i = 0; i < count; i++) {
-                    await this.addToCartBtn.nth(i).click();
-                    await this.contshoppingbtn.click();
-                }
-        
-        
-            }*/
 
     }
 }

@@ -11,7 +11,7 @@ export class SignUp {
     readonly firstname: Locator;
     readonly lastname: Locator;
     readonly accountname: Locator;
-    //readonly accountemail: Locator; - the field is already disabled
+    readonly accountemail: Locator; // - the field is already disabled
     readonly password: Locator;
     readonly day: Locator;
     readonly month: Locator;
@@ -39,7 +39,7 @@ export class SignUp {
         this.title = page.locator('#id_gender2');
 
         this.accountname = page.locator('#name');
-        //this.accountemail = page.locator('input[data-qa="email"]',);
+        this.accountemail = page.locator('input[data-qa="email"]',);
 
         this.password = page.locator('input[data-qa="password"]',);
         this.day = page.locator('#days');
@@ -62,15 +62,12 @@ export class SignUp {
 
         this.createbtn = page.getByRole('button', { name: 'Create Account' });
 
-
     }
 
     async registerURL() {
 
         await this.page.goto('https://www.automationexercise.com');
         await this.signuplink.click();
-
-
 
     }
 
