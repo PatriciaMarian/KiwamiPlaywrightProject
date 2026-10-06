@@ -44,7 +44,6 @@ test.describe('Product Checkout from the cart', () => {
 
     })
 
-
     test('Validate the delivery and billing address are displayed in checkout page', async () => {
 
         await productsAdded.addFirstProductToCart();
@@ -54,8 +53,8 @@ test.describe('Product Checkout from the cart', () => {
         expect(await productCheckout.getDeliveryAddress()).toBeVisible();
         expect(await productCheckout.getBillingAddress()).toBeVisible();
 
-    })
 
+    })
 
     test('Validate user submitting checkout', async ({ page }) => {
         await productsAdded.addFirstProductToCart();
